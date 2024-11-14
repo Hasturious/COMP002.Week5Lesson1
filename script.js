@@ -19,7 +19,15 @@ console.log("My grade average is " + myAverage);
 //My guess is that something about the array length is undefined or NaN
 
 function numberInput(number) {
-    if ()
+    try {
+        if (isNaN(number)) throw "NaN";
+        if (number < 1) throw "Too Low";
+        if (number > 100) throw "Too High";
+        else return number;
+    }
+    catch(err){
+        console.log("Input is " + err);
+    }
 }
 
-console.log(numberInput(50))
+console.log(numberInput(103))
